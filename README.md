@@ -1,1 +1,1 @@
-git@github.com:mornasty/mesto-project-ff.git
+https://github.com/mornasty/mesto-project-ff.git
