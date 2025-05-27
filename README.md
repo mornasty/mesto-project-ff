@@ -1,2 +1,1 @@
-# Проектная работа Mesto
-
+git@github.com:mornasty/mesto-project-ff.git
