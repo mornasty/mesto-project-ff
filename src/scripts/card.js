@@ -1,7 +1,7 @@
-// @todo: Темплейт карточки
-const cardTemplate = document.querySelector("#card-template").content;
-const popupPic = document.querySelector(".popup__image");
-const popupCaption = document.querySelector(".popup__caption");
+function getCardTemplate() {
+  const cardTemplate = document.querySelector("#card-template").content;
+  return cardTemplate.querySelector(".card").cloneNode(true);
+}
 
 // @todo: Функция создания карточки
 export function createCard(
@@ -11,8 +11,7 @@ export function createCard(
   toggleLike,
   setImageData
 ) {
-  const card = cardTemplate.querySelector(".card").cloneNode(true);
-
+  const card = getCardTemplate();
   const cardTitle = card.querySelector(".card__title");
   const cardImg = card.querySelector(".card__image");
   const cardBtn = card.querySelector(".card__delete-button");
@@ -37,10 +36,4 @@ export function deleteCard(evt) {
 
 export function toggleLike(evt) {
   evt.target.classList.toggle("card__like-button_is-active");
-}
-
-export function setImageData(evt, title) {
-  popupPic.src = evt.target.src;
-  popupPic.alt = title;
-  popupCaption.textContent = title;
 }
