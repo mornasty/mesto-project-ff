@@ -35,8 +35,8 @@ export function createCard(
   cardImg.src = imgUrl;
 
   cardLikeCounter.textContent = likes.length;
-  if (likes.filter(el => el._id === userInfo._id).length > 0) {
-    cardLikeBtn.classList.add('card__like-button_is-active')
+  if (likes.filter((el) => el._id === userInfo._id).length > 0) {
+    cardLikeBtn.classList.add("card__like-button_is-active");
   }
 
   cardLikeBtn.addEventListener("click", (evt) => {
@@ -65,18 +65,18 @@ export function deleteCard(evt, cardId) {
 // Функция переключения лайка
 export function toggleLike(evt, cardLikeCounter, cardId) {
   if (evt.target.classList.contains("card__like-button_is-active")) {
-    evt.target.classList.remove("card__like-button_is-active");
     deleteLike(cardId)
       .then((result) => {
+        evt.target.classList.remove("card__like-button_is-active");
         cardLikeCounter.textContent = result.likes.length;
       })
       .catch((err) => {
         console.log(err); // выводим ошибку в консоль
       });
   } else {
-    evt.target.classList.add("card__like-button_is-active");
     putLike(cardId)
       .then((result) => {
+        evt.target.classList.add("card__like-button_is-active");
         cardLikeCounter.textContent = result.likes.length;
       })
       .catch((err) => {

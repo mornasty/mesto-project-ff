@@ -92,6 +92,11 @@ function submitFormEditProfile(evt) {
     .catch((err) => {
       console.log(err); // выводим ошибку в консоль
       submitBtn.textContent = "Ошибка";
+    })
+    .finally(() => {
+      setTimeout(() => {
+        submitBtn.textContent = initalButtonText;
+      }, 2000);
     });
 }
 
@@ -113,6 +118,11 @@ function submitFormEditAvatar(evt) {
     .catch((err) => {
       console.log(err); // выводим ошибку в консоль
       submitBtn.textContent = "Ошибка";
+    })
+    .finally(() => {
+      setTimeout(() => {
+        submitBtn.textContent = initalButtonText;
+      }, 2000);
     });
 }
 
@@ -143,6 +153,11 @@ function submitFormNewCard(evt) {
     .catch((err) => {
       console.log(err); // выводим ошибку в консоль
       submitBtn.textContent = "Ошибка";
+    })
+   .finally(() => {
+      setTimeout(() => {
+        submitBtn.textContent = initalButtonText;
+      }, 2000);
     });
 }
 
